@@ -1,21 +1,21 @@
 class Tok < Formula
   desc "Token Optimization Kit - High-performance CLI proxy to minimize LLM token consumption"
   homepage "https://github.com/MantisWare/tok"
-  version "0.1.2"
+  version "0.1.3"
   license "MIT"
 
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/MantisWare/tok/releases/download/0.1.2/tok-aarch64-apple-darwin.tar.gz"
-    sha256 "a6f42c2096ceb499f2bd12df4b42613b9a3d698cc08b5af0745615096b8181da"
+    url "https://github.com/MantisWare/tok/releases/download/0.1.3/tok-aarch64-apple-darwin.tar.gz"
+    sha256 "c684b17ee8afcc5693c73ecd6fb3f366c51944384cacf50a47d1450cddb55b84"
   elsif OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/MantisWare/tok/releases/download/0.1.2/tok-x86_64-apple-darwin.tar.gz"
-    sha256 "f3a908931dead0a8b1079a58ea03c920364e9b7b749b6015275764632b2bd713"
+    url "https://github.com/MantisWare/tok/releases/download/0.1.3/tok-x86_64-apple-darwin.tar.gz"
+    sha256 "e7e82ace5985993b7e803c91315f2a92e969f1ea81ff3976fec072bdc7992e28"
   elsif OS.linux? && Hardware::CPU.arm?
-    url "https://github.com/MantisWare/tok/releases/download/0.1.2/tok-aarch64-unknown-linux-gnu.tar.gz"
-    sha256 "e1a3f155d1ab092a068f559371ccb42d87d96dddfc5e3c3d39a4c0018a243c4b"
+    url "https://github.com/MantisWare/tok/releases/download/0.1.3/tok-aarch64-unknown-linux-gnu.tar.gz"
+    sha256 "585f24232743282aa138ccda124c654501f84bd45bd23ecb25039e01c325de60"
   elsif OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/MantisWare/tok/releases/download/0.1.2/tok-x86_64-unknown-linux-musl.tar.gz"
-    sha256 "31664091107947f6acd230b018fe117f000f7f86d7171dfce8ebf615c20f2d8b"
+    url "https://github.com/MantisWare/tok/releases/download/0.1.3/tok-x86_64-unknown-linux-musl.tar.gz"
+    sha256 "f04ae705411da2fca5dd75eae96b3dbefa14cc348be46dd3561811533da4885b"
   end
 
   def install
@@ -24,19 +24,44 @@ class Tok < Formula
 
   def caveats
     <<~EOS
-      tok is installed! Get started:
 
-        # Initialize for Claude Code
-        tok init -g          # Global hook-first setup (recommended)
-        tok init             # Add to ./CLAUDE.md (this project only)
+        ████████╗  ██████╗   ██╗  ██╗
+        ╚══██╔══╝ ██╔═══██╗  ██║ ██╔╝
+ ██║    ██║   ██║  █████╔╝
+ ██║    ██║   ██║  ██╔═██╗
+ ██║     ╚████╔╝   ██║  ██╗
+ ╚═╝      ╚═══╝    ╚═╝  ╚═╝
+        tok 0.1.3 — Token Optimization Kit
+        Squeeze noisy CLI output before it hits your LLM
 
-        # See all commands
-        tok --help
+      ── Quick Start ─────────────────────────────────────
 
-        # Measure your token savings
-        tok gain
+        # 1. Install for your AI tool
+        tok init -g                  # Claude Code (recommended)
+        tok init -g --gemini         # Gemini CLI
+        tok init -g --codex          # Codex (OpenAI)
+        tok init -g --agent cursor   # Cursor
 
-      Full documentation: https://github.com/MantisWare/tok
+        # 2. Restart your AI tool, then test
+        tok --version                # Verify installation
+        tok gain                     # View token savings
+
+      ── What It Does ──────────────────────────────────
+
+        tok sits between your shell and your LLM, filtering
+        command output for 60-90% token savings:
+
+        tok git status          # Compact status
+        tok cargo test          # Failures only (-90%)
+        tok ls .                # Token-optimized tree
+        tok grep "pattern" .    # Grouped results
+
+      ── Resources ─────────────────────────────────────
+
+        Docs:   https://github.com/MantisWare/tok
+        Help:   tok --help
+        Issues: https://github.com/MantisWare/tok/issues
+
     EOS
   end
 
