@@ -1,21 +1,21 @@
 class Tok < Formula
   desc "Token Optimization Kit - High-performance CLI proxy to minimize LLM token consumption"
   homepage "https://github.com/MantisWare/tok"
-  version "0.1.19"
+  version "0.1.20"
   license "MIT"
 
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/MantisWare/tok/releases/download/v0.1.19/tok-aarch64-apple-darwin.tar.gz"
-    sha256 "c5ae980fe65e3123a23aa7175fdc2c65617b51eb56ad367a746f0cfa6d4e963c"
+    url "https://github.com/MantisWare/tok/releases/download/v0.1.20/tok-aarch64-apple-darwin.tar.gz"
+    sha256 "f51a97950eab747358f6f1393e5b726616124b19f2da5e200ce86ede452cd092"
   elsif OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/MantisWare/tok/releases/download/v0.1.19/tok-x86_64-apple-darwin.tar.gz"
-    sha256 "566c301a8f709574ee31a04110bfc8dfd72a1fefa5b345febd89478baade6cbe"
+    url "https://github.com/MantisWare/tok/releases/download/v0.1.20/tok-x86_64-apple-darwin.tar.gz"
+    sha256 "d38f9058d0e4c407a36262205eaf186025b624035dba5820f62e67fd16f57c67"
   elsif OS.linux? && Hardware::CPU.arm?
-    url "https://github.com/MantisWare/tok/releases/download/v0.1.19/tok-aarch64-unknown-linux-gnu.tar.gz"
-    sha256 "0c6182afbd844b1291258bd4b225edb05aa69e28a7c912cf768431d8cf29f790"
+    url "https://github.com/MantisWare/tok/releases/download/v0.1.20/tok-aarch64-unknown-linux-gnu.tar.gz"
+    sha256 "6da33f3027a40427b659046803d36a1b43ff6ed9c64b58df5ddd5eb5738a715a"
   elsif OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/MantisWare/tok/releases/download/v0.1.19/tok-x86_64-unknown-linux-musl.tar.gz"
-    sha256 "284a218e2505d3d114f092b91100429c74b65db41fded9b8a0765a5f0d16c38d"
+    url "https://github.com/MantisWare/tok/releases/download/v0.1.20/tok-x86_64-unknown-linux-musl.tar.gz"
+    sha256 "d88c9d55a1296534d747e3a80174177217cc9c84eb1888942b5766e02fc515b1"
   end
 
   def install
@@ -31,7 +31,7 @@ class Tok < Formula
          ██║     ╚████╔╝   ██║  ██╗
          ╚═╝      ╚═══╝    ╚═╝  ╚═╝
 
-    tok 0.1.19 — Token Optimization Kit
+    tok 0.1.20 — Token Optimization Kit
     Squeeze noisy CLI output before it hits your LLM
 
   ── Quick Start ─────────────────────────────────────────
