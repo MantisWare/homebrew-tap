@@ -1,8 +1,8 @@
 class MiaCli < Formula
   desc "Terminal interface to miaOS"
   homepage "https://github.com/MantisWare/mia-cli"
-  url "git@github.com:MantisWare/mia-cli.git", tag: "v0.6.0"
-  version "0.6.0"
+  url "git@github.com:MantisWare/mia-cli.git", tag: "v0.7.1"
+  version "0.7.1"
   license :cannot_represent
 
   depends_on "node"
